@@ -230,7 +230,8 @@ export function prerenderSeoPlugin(): Plugin {
 
       let count = 0;
       for (const r of routes) {
-        const canonical = `${SITE}${r.path}`;
+        const canonicalPath = r.path === "/" ? "/" : r.path.endsWith("/") ? r.path : `${r.path}/`;
+        const canonical = `${SITE}${canonicalPath}`;
         const html = applyMeta(template, r.title, r.desc, canonical);
         const outPath =
           r.path === "/"
