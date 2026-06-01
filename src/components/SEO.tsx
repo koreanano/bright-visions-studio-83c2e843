@@ -49,7 +49,12 @@ const SEO = ({
     return clip(`${BASE_DESC}${tail}`);
   })();
   const finalDescription = description ? clip(description) : fallbackDesc;
-  const canonical = `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+  const normalizedPath = (() => {
+    const p = path.startsWith("/") ? path : `/${path}`;
+    if (p === "/") return "/";
+    return p.endsWith("/") ? p : `${p}/`;
+  })();
+  const canonical = `${SITE_URL}${normalizedPath}`;
 
   return (
     <Helmet>
