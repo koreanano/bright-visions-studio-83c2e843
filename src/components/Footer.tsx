@@ -48,7 +48,7 @@ const Footer = () => {
         <div className="mx-auto flex max-w-[1440px] flex-col items-center justify-center gap-1 px-6 py-2 text-xs text-muted-foreground lg:flex-row lg:gap-6 lg:px-12">
           <span>사업자등록번호 725-87-03238</span>
           <span className="hidden lg:inline text-border">|</span>
-          <span>주식회사디솔루션</span>
+          <span>주식회사 신재생에너지</span>
           <span className="hidden lg:inline text-border">|</span>
           <span>대표자 최은성</span>
         </div>
